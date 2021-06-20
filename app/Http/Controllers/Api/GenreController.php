@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
-{   
+class GenreController extends Controller
+{
+    
     private $rules = [
         'name' => 'required|max:255',
         'is_active' => 'boolean'
@@ -16,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         // Get All
-        return Category::all();
+        return Genre::all();
     }
 
     public function store(Request $request)
@@ -24,27 +25,27 @@ class CategoryController extends Controller
         // Post
         // $request->all() devido configuração do fillable no model
         $this->validate($request, $this->rules);
-        return Category::create($request->all());
+        return Genre::create($request->all());
     }
    
-    public function show(Category $category) //Route Model Binding
+    public function show(Genre $genre) //Route Model Binding
     {
         // Get By Id
-        return $category; 
+        return $genre; 
     }
    
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Genre $genre)
     {
      // Put
      $this->validate($request, $this->rules);
-     $category->update($request->all());
-     return $category;
+     $genre->update($request->all());
+     return $genre;
     }
     
-    public function destroy(Category $category)
+    public function destroy(Genre $genre)
     {
         //Delete
-        $category->delete();
+        $genre->delete();
         return response()->noContent(); //204
     }
 }

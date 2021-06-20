@@ -1,21 +1,15 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="http://maratona.fullcycle.com.br/public/img/logo-maratona.png"/></a>
-</p>
 
-## Descrição
+## Sobre
+Essa implementação tem como objetivo fixar conhecimento adquirido durante o **módulo Catálogo de vídeos com Laravel (Back-end)** da Formação Full Cycle by Code.Education. 
 
-Microsserviço de catálogo
+---
 
-## Rodar a aplicação
-
-#### Crie os containers com Docker
-
+#### Iniciar Docker
 ```bash
-$ docker-compose up
+$ docker-compose up -d
 ```
 
-#### Accesse no browser
-
+#### Servidor Web
 ```
 http://localhost:8000
 ```
